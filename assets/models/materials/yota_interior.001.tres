@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1vrus0h66wem"]
+
+[resource]
+resource_name = "yota_interior.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.525658

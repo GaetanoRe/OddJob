@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0m0k83aj1naj"]
+
+[resource]
+resource_name = "yota_lights"
+cull_mode = 2
+roughness = 0.241053
+emission_enabled = true
+emission = Color(0.9733, 0.868714, 0.695573, 1)
+emission_energy_multiplier = 16.0
+emission_on_uv2 = true

@@ -1,0 +1,87 @@
+using Godot;
+using System;
+
+public partial class Player : CharacterBody3D
+{
+
+	[Export]
+	public float speed = 10f;
+
+	[Export]
+	public float lookSensitivity = 0.06f;
+
+	[Export]
+	public bool isRunning;
+
+	[Export]
+	public Node3D camRoot;
+
+	[Export]
+	public Camera3D camera;
+
+	private Vector3 charVelocity;
+
+	private Vector3 wishDirection;
+
+	public override void _Ready()
+	{
+
+	}
+
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton)
+		{
+			Input.MouseMode = Input.MouseModeEnum.Captured;
+		}
+		else if (@event.IsActionPressed("ui_cancel"))
+		{
+			Input.MouseMode = Input.MouseModeEnum.Visible;
+		}
+		
+		if(Input.MouseMode == Input.MouseModeEnum.Captured)
+		{
+			if(@event is InputEventMouseMotion mouseMotion)
+			{
+				camRoot.RotateY(-mouseMotion.Relative.X * lookSensitivity);
+				camera.RotateX(-mouseMotion.Relative.Y * lookSensitivity);
+				float xRotation = Mathf.Clamp(camera.Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
+				camera.Rotation = new Vector3(xRotation, camera.Rotation.Y, camera.Rotation.Z);
+			}
+		}
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		var inputDirection = Input.GetVector("move_left", "move_right", "move_forward", "move_backward").Normalized();
+
+		wishDirection = camRoot.GlobalTransform.Basis * new Vector3(inputDirection.X, 0, inputDirection.Y);
+
+		if (IsOnFloor())
+		{
+			_HandleGroundPhysics();
+		}
+		else
+		{
+			_HandleAirPhysics();
+		}
+		MoveAndSlide();
+	}
+
+
+	private void _HandleAirPhysics()
+	{
+		float currVelocity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
+		Velocity = new Vector3(Velocity.X, -currVelocity, Velocity.Z);
+	}
+	
+	private void _HandleGroundPhysics()
+	{
+		charVelocity.X = wishDirection.X * speed;
+		charVelocity.Z = wishDirection.Z * speed;
+
+		Velocity = charVelocity;
+	}
+
+
+}

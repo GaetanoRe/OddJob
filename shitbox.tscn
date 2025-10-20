@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dikwys5yre1pp"]
+
+[ext_resource type="PackedScene" uid="uid://bc6sp8y80e7w6" path="res://assets/models/shitbox_truck.glb" id="1_a7pu6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7pu6"]
+size = Vector3(1.711, 1.67361, 4.30542)
+
+[node name="Shitbox" type="CharacterBody3D"]
+
+[node name="shitbox_truck" parent="." instance=ExtResource("1_a7pu6")]
+
+[node name="HeadlightEmmissions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14997)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HeadlightEmmissions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.634323, 0.95319, 1.99119)
+light_energy = 14.055
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 1976.52
+spot_angle = 50.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="HeadlightEmmissions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.619877, 0.95319, 1.99119)
+light_energy = 14.055
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 1976.52
+spot_angle = 50.0
+
+[node name="PlayerAnchor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329554, 0.880344, 0.140915)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0254822, 0.885208, -0.258814)
+shape = SubResource("BoxShape3D_a7pu6")

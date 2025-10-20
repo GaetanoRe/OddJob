@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cjfdjngkl5vv6"]
+
+[resource]
+resource_name = "toyota_metal.001"
+cull_mode = 2
+albedo_color = Color(0.828954, 0.856475, 0.906332, 1)
+metallic = 1.0
+roughness = 0.525658

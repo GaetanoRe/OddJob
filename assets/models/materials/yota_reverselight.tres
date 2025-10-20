@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ctyyhxpgx1qs3"]
+
+[resource]
+resource_name = "yota_reverselight"
+cull_mode = 2
+roughness = 0.525658
+emission_enabled = true
+emission = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+emission_energy_multiplier = 16.0

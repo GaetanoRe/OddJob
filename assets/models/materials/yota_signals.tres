@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ceipi3sjpop5t"]
+
+[resource]
+resource_name = "yota_signals"
+cull_mode = 2
+roughness = 0.233148
+emission_enabled = true
+emission = Color(0.679965, 0.459093, 0.0171448, 1)
+emission_energy_multiplier = 16.0

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1vm8thelrbb1"]
+
+[resource]
+resource_name = "yota_gaugecluster"
+cull_mode = 2
+albedo_color = Color(0.241156, 0.241156, 0.241156, 1)
+roughness = 0.525658

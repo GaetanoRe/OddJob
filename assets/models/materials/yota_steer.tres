@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxferm1y1opqx"]
+
+[resource]
+resource_name = "yota_steer"
+cull_mode = 2
+albedo_color = Color(0.106656, 0.0677417, 0.0249485, 1)
+roughness = 0.612621

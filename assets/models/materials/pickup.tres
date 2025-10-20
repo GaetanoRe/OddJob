@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bws21x0gxol7i"]
+
+[resource]
+resource_name = "pickup"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 0.255319
+roughness = 0.989908

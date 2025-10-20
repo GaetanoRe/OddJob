@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dp15vulbm3gf3"]
+
+[resource]
+resource_name = "yota_glass"
+transparency = 2
+alpha_scissor_threshold = 0.449
+alpha_antialiasing_mode = 0
+blend_mode = 1
+cull_mode = 1
+depth_draw_mode = 1
+albedo_color = Color(0.164706, 0.0196078, 0.32549, 0.458824)
+roughness = 0.0513167

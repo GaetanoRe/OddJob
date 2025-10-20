@@ -1,0 +1,180 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bc6sp8y80e7w6"
+path="res://.godot/imported/shitbox_truck.glb-31145f16416fd58e5738f9d207bf68db.scn"
+
+[deps]
+
+source_file="res://assets/models/shitbox_truck.glb"
+dest_files=["res://.godot/imported/shitbox_truck.glb-31145f16416fd58e5738f9d207bf68db.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"black": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/black.tres"
+},
+"centerpeice": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/centerpeice.tres"
+},
+"lights": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/lights.tres"
+},
+"lugnuts": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/lugnuts.tres"
+},
+"offroadtire": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/offroadtire.tres"
+},
+"picku": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/picku.tres"
+},
+"pickup": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/pickup.tres"
+},
+"pickup.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/pickup.002.tres"
+},
+"pickup_interior.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/pickup_interior.001.tres"
+},
+"rims": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/rims.tres"
+},
+"toyota_chrome.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/toyota_chrome.001.tres"
+},
+"toyota_engine": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/toyota_engine.tres"
+},
+"toyota_metal.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/toyota_metal.001.tres"
+},
+"trim_chrome": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/trim_chrome.tres"
+},
+"yoota_interior": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yoota_interior.tres"
+},
+"yota": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota.tres"
+},
+"yota_black": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_black.tres"
+},
+"yota_bumper": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_bumper.tres"
+},
+"yota_dash": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_dash.tres"
+},
+"yota_doorpanel": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_doorpanel.tres"
+},
+"yota_gaugecluster": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_gaugecluster.tres"
+},
+"yota_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_glass.tres"
+},
+"yota_grille": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_grille.tres"
+},
+"yota_interior": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_interior.tres"
+},
+"yota_interior.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_interior.001.tres"
+},
+"yota_lights": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_lights.tres"
+},
+"yota_plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_plastic.tres"
+},
+"yota_reverselight": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_reverselight.tres"
+},
+"yota_shift": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_shift.tres"
+},
+"yota_signal_L": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_signal_L.tres"
+},
+"yota_signal_R": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_signal_R.tres"
+},
+"yota_signals": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_signals.tres"
+},
+"yota_steer": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_steer.tres"
+},
+"yota_taillight_L": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_taillight_L.tres"
+},
+"yota_taillight_R": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/yota_taillight_R.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

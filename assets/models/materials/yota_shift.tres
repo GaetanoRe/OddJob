@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnuo5ncg3di8s"]
+
+[resource]
+resource_name = "yota_shift"
+cull_mode = 2
+albedo_color = Color(0.45999, 0.45999, 0.45999, 1)
+metallic = 1.0
+roughness = 0.739112

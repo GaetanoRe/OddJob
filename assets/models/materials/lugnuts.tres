@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck6b7u8q6dsiy"]
+
+[resource]
+resource_name = "lugnuts"
+cull_mode = 2
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+metallic = 1.0
+roughness = 0.525658

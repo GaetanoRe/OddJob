@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbrs1ypa0b2kl"]
+
+[resource]
+resource_name = "yoota_interior"
+cull_mode = 2
+albedo_color = Color(0.203812, 0.206567, 0.206567, 1)
+roughness = 0.83398

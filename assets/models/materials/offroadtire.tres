@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qkw702wcondx"]
+
+[resource]
+resource_name = "offroadtire"
+cull_mode = 2
+albedo_color = Color(0.119991, 0.119991, 0.119991, 1)
+roughness = 0.740962

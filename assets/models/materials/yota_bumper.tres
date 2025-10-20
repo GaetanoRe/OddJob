@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ibmdgj3xa3vr"]
+
+[resource]
+resource_name = "yota_bumper"
+cull_mode = 2
+albedo_color = Color(0.339994, 0.339994, 0.339994, 1)
+metallic = 0.566667
+roughness = 0.54147

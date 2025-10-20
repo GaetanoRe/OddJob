@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2gk8833kep4w"]
+
+[resource]
+resource_name = "yota_signal_R"
+cull_mode = 2
+roughness = 0.161996
