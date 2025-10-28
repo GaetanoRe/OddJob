@@ -5,7 +5,10 @@ public partial class Player : CharacterBody3D
 {
 
 	[Export]
-	public float speed = 10f;
+	public float speed = 5f;
+
+	[Export]
+	public float jumpVel = 50f;
 
 	[Export]
 	public float lookSensitivity = 0.06f;
@@ -19,16 +22,24 @@ public partial class Player : CharacterBody3D
 	[Export]
 	public Camera3D camera;
 
+	[Export]
+	public InteractCast interactCast;
+
+	public bool canInteract = false;
+
+
+	private float walkSpeed = 5f;
+	
 	private Vector3 charVelocity;
 
 	private Vector3 wishDirection;
 
 	public override void _Ready()
 	{
-
+		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
-	public override void _UnhandledInput(InputEvent @event)
+	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventMouseButton)
 		{
@@ -63,23 +74,50 @@ public partial class Player : CharacterBody3D
 		}
 		else
 		{
-			_HandleAirPhysics();
+			_HandleAirPhysics(delta, Velocity.Y);
 		}
 		MoveAndSlide();
 	}
 
+	private void OnRayEnteredInteractable(Area3D area){
+		canInteract = true;
+	}
 
-	private void _HandleAirPhysics()
+	private void OnRayExitedInteractable(Area3D area){
+		canInteract = false;
+		
+	}
+
+
+	private void _HandleAirPhysics(double delta, float currVelocity)
 	{
-		float currVelocity = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
-		Velocity = new Vector3(Velocity.X, -currVelocity, Velocity.Z);
+		currVelocity -= (float) ProjectSettings.GetSetting("physics/3d/default_gravity") * (float)delta;
+		Velocity = new Vector3(Velocity.X, currVelocity, Velocity.Z);
 	}
 	
 	private void _HandleGroundPhysics()
 	{
+		if(isRunning){
+			speed = walkSpeed * 2;
+		}
+		else{
+			speed = walkSpeed;
+		}
 		charVelocity.X = wishDirection.X * speed;
 		charVelocity.Z = wishDirection.Z * speed;
+		if(Input.IsActionPressed("jump")){
+			charVelocity.Y = jumpVel;
+		}
+		else{
+			charVelocity.Y = 0;
+		}
 
+		if(Input.IsActionPressed("run_forward")){
+			isRunning = true;
+		}
+		else{
+			isRunning = false;
+		}
 		Velocity = charVelocity;
 	}
 
