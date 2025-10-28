@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh6yxqliftppv"]
+[gd_scene load_steps=6 format=3 uid="uid://dh6yxqliftppv"]
 
 [ext_resource type="Script" uid="uid://n1hto7lj6jdr" path="res://scripts/Player.cs" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dvh6jlktxftbe" path="res://InteractCast.cs" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://dhtumf3gvpgru" path="res://scenes/player_ui.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camRoot", "camera")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camRoot", "camera", "interactCast")]
 script = ExtResource("1_4flbx")
 camRoot = NodePath("CamRoot")
 camera = NodePath("CamRoot/Camera3D")
+interactCast = NodePath("CamRoot/Camera3D/InteractCast")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_sh265")
@@ -21,3 +24,19 @@ shape = SubResource("CapsuleShape3D_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="CamRoot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.529639, -0.0406644)
+
+[node name="InteractCast" type="RayCast3D" parent="CamRoot/Camera3D"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 9
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("2_onrkg")
+
+[node name="PlayerUIContainer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="PlayerUI" parent="PlayerUIContainer" node_paths=PackedStringArray("player") instance=ExtResource("3_i3pqv")]
+player = NodePath("../..")
+
+[connection signal="RayEnteredInteractable" from="CamRoot/Camera3D/InteractCast" to="." method="OnRayEnteredInteractable"]
+[connection signal="RayExitedInteractable" from="CamRoot/Camera3D/InteractCast" to="." method="OnRayExitedInteractable"]

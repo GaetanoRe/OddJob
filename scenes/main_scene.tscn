@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc5iuc70s3fs5"]
+[gd_scene load_steps=10 format=3 uid="uid://cc5iuc70s3fs5"]
 
 [ext_resource type="PackedScene" uid="uid://gvdiporhwlm4" path="res://floor.tscn" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://b80qnbrbqyteu" path="res://wall.tscn" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://dikwys5yre1pp" path="res://shitbox.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://8cnyan86td1y" path="res://scenes/interactable_test.tscn" id="3_c16ls"]
 [ext_resource type="PackedScene" uid="uid://dh6yxqliftppv" path="res://player.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cf88dn3wjoi7h" path="res://road.tscn" id="5_gubc5"]
 
@@ -22,18 +23,20 @@ reflected_light_source = 2
 
 [node name="MainScene" type="Node"]
 
-[node name="Environment" type="WorldEnvironment" parent="."]
+[node name="LightingEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pw63i")
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="PhysicalEnvironment" type="Node3D" parent="."]
 
-[node name="Wall" parent="Walls" instance=ExtResource("2_pw63i")]
+[node name="Walls" type="Node3D" parent="PhysicalEnvironment"]
+
+[node name="Wall" parent="PhysicalEnvironment/Walls" instance=ExtResource("2_pw63i")]
 transform = Transform3D(5.70603, 0, 0, 0, 4.31802, 0, 0, 0, 0.490212, -3.91944, 2.24081, -0.294574)
 
-[node name="Wall2" parent="Walls" instance=ExtResource("2_pw63i")]
+[node name="Wall2" parent="PhysicalEnvironment/Walls" instance=ExtResource("2_pw63i")]
 transform = Transform3D(0.591392, 0, -0.487572, 0, 4.31802, 0, 5.6753, 0, 0.0508072, -6.39075, 2.24081, 1.4354)
 
-[node name="Floor" parent="." instance=ExtResource("1_w2twt")]
+[node name="Floor" parent="PhysicalEnvironment" instance=ExtResource("1_w2twt")]
 transform = Transform3D(76.2215, 0, 0, 0, 1, 0, 0, 0, 153.819, 0.130348, 0, 0.185577)
 
 [node name="Shitbox" parent="." instance=ExtResource("3_7ykc4")]
@@ -41,6 +44,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40256, 0.160251, 1.14104)
 
 [node name="Player" parent="." instance=ExtResource("4_pu3yx")]
 transform = Transform3D(0.749456, 0, -0.0285554, 0, 0.75, 0, 0.0285554, 0, 0.749456, 4.81538, 0.904346, 5.50318)
+jumpVel = 5.0
 
 [node name="Road" parent="." instance=ExtResource("5_gubc5")]
 transform = Transform3D(4.39319, 0, 0, 0, 1, 0, 0, 0, 150.337, 2.1231, 0.0991116, -0.410471)
+
+[node name="InteractableTest" parent="." instance=ExtResource("3_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16726, 0.577026, 9.37449)

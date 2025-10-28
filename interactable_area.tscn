@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhcbbar4mywep"]
+
+[ext_resource type="Script" uid="uid://4w7k6yg670ic" path="res://InteractableArea.cs" id="1_rua2f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac6cy"]
+size = Vector3(1.01455, 1.05896, 1.12929)
+
+[node name="InteractableArea" type="Area3D" groups=["interactable"]]
+collision_layer = 8
+script = ExtResource("1_rua2f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0599613, 0.0465698, 0.0786514)
+shape = SubResource("BoxShape3D_ac6cy")

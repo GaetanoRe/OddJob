@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhtumf3gvpgru"]
+
+[ext_resource type="Texture2D" uid="uid://bfnpeq4fgvur7" path="res://assets/textures/ui/Aim.png" id="1_jkj6h"]
+[ext_resource type="Script" uid="uid://dbyktweoee80b" path="res://scenes/PlayerUI.cs" id="1_sk4pr"]
+
+[node name="PlayerUI" type="Control" node_paths=PackedStringArray("interactLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sk4pr")
+interactLabel = NodePath("Interactlabel")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_jkj6h")
+
+[node name="Interactlabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 587.0
+offset_top = 311.0
+offset_right = 627.0
+offset_bottom = 334.0
+text = "Press 'E' To Interact"

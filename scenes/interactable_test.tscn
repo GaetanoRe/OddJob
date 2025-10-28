@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://8cnyan86td1y"]
+
+[ext_resource type="PackedScene" uid="uid://dhcbbar4mywep" path="res://interactable_area.tscn" id="1_evilb"]
+[ext_resource type="Script" uid="uid://r51cgcios8hl" path="res://scenes/InteractableTest.cs" id="1_r4px6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ac6cy"]
+albedo_color = Color(0.458824, 0.431373, 0.0509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_evilb"]
+material = SubResource("StandardMaterial3D_ac6cy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_evilb"]
+
+[node name="InteractableTest" type="StaticBody3D"]
+script = ExtResource("1_r4px6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_evilb")
+
+[node name="InteractableArea" parent="." instance=ExtResource("1_evilb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_evilb")
