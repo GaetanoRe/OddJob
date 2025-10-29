@@ -41,6 +41,17 @@ public partial class Player : CharacterBody3D
 
 	public override void _Input(InputEvent @event)
 	{
+		if(@event.IsActionPressed("interact"))
+		{
+			if (canInteract)
+			{
+				var interactable = interactCast.GetCurrentArea();
+				if(interactable is InteractableArea ia)
+				{
+					ia.Interact(this);
+				}
+			}
+		}
 		if (@event is InputEventMouseButton)
 		{
 			Input.MouseMode = Input.MouseModeEnum.Captured;

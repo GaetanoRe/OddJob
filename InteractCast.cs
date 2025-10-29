@@ -37,7 +37,7 @@ public partial class InteractCast : RayCast3D
 			EmitSignal(SignalName.RayExitedInteractable, _last);
 		}
 
-		
+		_last = current;
 	}
 	
 	public Area3D GetCurrentArea() => _last;
